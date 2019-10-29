@@ -54,10 +54,16 @@ public class CircularFifoQueue<T> {
 
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		for (int i = 0, k = begin; i < filled; i++, k = next(k)) {
+		int k = begin;
+
+		sb.append('[');
+		for (int i = 0; i < filled - 1; i++, k = next(k)) {
 			sb.append(queue.get(k));
-			sb.append(' ');
+			sb.append(", ");
 		}
+		sb.append(next(k));
+		sb.append(']');
+		
 		return sb.toString();
 	}
 }

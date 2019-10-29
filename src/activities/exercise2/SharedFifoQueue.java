@@ -5,7 +5,7 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class QueueLock {
+public class SharedFifoQueue {
 
 	CircularFifoQueue<Long> queue;
 	Lock locker = new ReentrantLock();
@@ -14,7 +14,7 @@ public class QueueLock {
 	
 	Random random = new Random();
 	
-	public QueueLock(int length) {
+	public SharedFifoQueue(int length) {
 		queue = new CircularFifoQueue<Long>(length);
 	}
 	

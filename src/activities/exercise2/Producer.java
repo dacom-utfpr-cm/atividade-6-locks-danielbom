@@ -9,17 +9,17 @@ import java.util.Random;
  */
 public class Producer implements Runnable {
 
-	private QueueLock product;
+	private SharedFifoQueue product;
 	
 	private Random random = new Random();
 
 	private int time;
 	
-	public Producer(QueueLock product) {
+	public Producer(SharedFifoQueue product) {
 		this(product, 0);
 	}
 	
-	public Producer(QueueLock product, int time) {
+	public Producer(SharedFifoQueue product, int time) {
 		this.product = product;
 		this.time = time;
 	}

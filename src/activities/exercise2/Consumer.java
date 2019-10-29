@@ -7,14 +7,14 @@ package activities.exercise2;
  */
 public class Consumer implements Runnable {
 
-	private QueueLock product;
+	private SharedFifoQueue product;
 	private int time;
 
-	public Consumer(QueueLock product) {
+	public Consumer(SharedFifoQueue product) {
 		this(product, 0);
 	}
 
-	public Consumer(QueueLock product, int time) {
+	public Consumer(SharedFifoQueue product, int time) {
 		this.product = product;
 		this.time = time;
 	}

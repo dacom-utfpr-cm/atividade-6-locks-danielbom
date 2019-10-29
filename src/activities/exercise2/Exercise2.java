@@ -8,7 +8,7 @@ package activities.exercise2;
  */
 public class Exercise2 {
 	public static void main(String[] args) {
-		QueueLock queue = new QueueLock(3);
+		SharedFifoQueue queue = new SharedFifoQueue(3);
 		new Thread(new Producer(queue, 1000)).start();
 		new Thread(new Producer(queue, 1000)).start();
 		new Thread(new Producer(queue, 1000)).start();
